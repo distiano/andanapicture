@@ -30,10 +30,10 @@ const CompanyProfile = () => {
           ></iframe>
         </div>{' '}
         <div className=" mx-auto  size-full">
-          <h1 className="text-lg font-semibold">Profil SMK Raden Umar Said Kudus 2023</h1>
+          <h1 className="text-lg font-semibold">Profil SMK Raden Umar Said Kudus 2022</h1>
           <iframe
             className="rounded-md size-full mt-3"
-            src="https://www.youtube.com/embed/I0HR_dJYD5k"
+            src="https://www.youtube.com/embed/2x3g3Zn0ED0?si=8miX1xcWeIIvSXg3"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -41,10 +41,10 @@ const CompanyProfile = () => {
           ></iframe>
         </div>{' '}
         <div className=" mx-auto  size-full">
-          <h1 className="text-lg font-semibold">Profil SMK Raden Umar Said Kudus 2023</h1>
+          <h1 className="text-lg font-semibold">PROFIL RM H ISMUN</h1>
           <iframe
             className="rounded-md size-full mt-3"
-            src="https://www.youtube.com/embed/I0HR_dJYD5k"
+            src="https://www.youtube.com/embed/axOHTFBbupg?si=KrQsP3xfnKlK669N"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
