@@ -26,7 +26,7 @@ function Gallery() {
   // };
 
   return (
-    <div className="py-16 px-6 md:px-24 bg-[#faf6f2]">
+    <div className="py-16 px-6 xl:px-24 bg-[#faf6f2]">
       <div className="flex items-center justify-center ">
         <div className="w-1/5 sm:w-1/5 border-t border-yellow-900 mr-4"></div>
         <h1 className="text-4xl font-light text-center text-[#433a33] px-5">Gallery</h1>
@@ -66,7 +66,7 @@ function Gallery() {
           </div>
         </Slider>
       </div> */}
-      <div className="mt-10 grid sm:grid-cols-3 gap-3 ">
+      <div className="mt-10 grid lg:grid-cols-3 gap-3 ">
         <div className="mx-auto">
           <Link to="/wedding">
             <div className="border-8 relative size-[350px]">

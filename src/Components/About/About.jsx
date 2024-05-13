@@ -12,7 +12,7 @@ const About = () => {
         <div className="w-1/5  border-t border-yellow-900 ml-4"></div>
       </div>
       <div className="text-center text-[#433a33]  mt-10 font-light">
-        <h3 className=" md:px-32 md:text-lg">
+        <h3 className=" lg:px-32 md:text-lg">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, iusto! Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae vero voluptates nihil rerum nam voluptate commodi reprehenderit culpa obcaecati eligendi?
         </h3>
         <div className="grid sm:grid-cols-2 gap-10 mt-10 items-center">

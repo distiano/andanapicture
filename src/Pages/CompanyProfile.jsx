@@ -25,7 +25,7 @@ const Wedding = () => {
           </h1>
         </div>
       </div>
-      <div className="py-16 px-6 sm:px-24 grid sm:grid-cols-3 gap-3 justify-center">
+      <div className="py-16 px-6 xl:px-24 grid lg:grid-cols-3 gap-3 justify-center">
         {comprocustomers.map((comprocustomers, index) => (
           <div className="mx-auto" key={index}>
             <Link to={`/comprocustomers/${comprocustomers.id}`}>

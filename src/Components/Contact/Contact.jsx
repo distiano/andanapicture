@@ -26,7 +26,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="py-16 px-32 ">
-        <div className="grid sm:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-10">
           <div className="grid sm:grid-cols-2 border-8 border-white">
             <div>
               <img src={image4} alt="" />

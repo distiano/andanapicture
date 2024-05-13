@@ -7,6 +7,8 @@ import image8 from '../assets/images/image8.jpg';
 import { Link } from 'react-router-dom';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { useEffect } from 'react';
+import weddingcustomers from '../assets/data/weddingcustomers';
+import Footer from '../Components/Footer/Footer';
 
 const Yearbook = () => {
   useEffect(() => {
@@ -18,52 +20,28 @@ const Yearbook = () => {
       <Example />
       <div className="hero bg-cover " style={{ backgroundImage: `url(${bg1})` }}>
         <div className="min-h-[40vh] flex justify-center items-center pt-14 bg-black bg-opacity-30">
-          <h1 className="text-5xl font-bold text-[#433a33]" style={{ fontFamily: '"Sedan", serif' }}>
+          <h1 className="text-5xl font-thin text-white" style={{ fontFamily: '"Roboto", serif' }}>
             Yearbook
           </h1>
         </div>
       </div>
-      <div className="py-16 px-6 sm:px-24 grid sm:grid-cols-3 gap-3 justify-center">
-        <div className="mx-auto">
-          <Link to="/yearbook">
-            <div className="border-8 relative size-80 hover:scale-105 transition duration-300">
-              <img src={image4} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-                <h5 className="text-xl mb-3">Yearbook</h5>
-                <h3 className="text-2xl " style={{ fontFamily: '"Sedan", serif' }}>
-                  Bella - Lukas
-                </h3>
+      <div className="py-16 px-6 xl:px-24 grid lg:grid-cols-3 gap-3 justify-center">
+        {weddingcustomers.map((weddingcustomers, index) => (
+          <div className="mx-auto" key={index}>
+            <Link to={`/weddingcustomers/${weddingcustomers.id}`}>
+              <div className="border-8 relative size-80 hover:scale-105 transition duration-300">
+                <img src={weddingcustomers.imgCover} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                  <h3 className="text-2xl font-thin" style={{ fontFamily: '"Roboto", serif' }}>
+                    {weddingcustomers.couple}
+                  </h3>
+                </div>
               </div>
-            </div>
-          </Link>
-        </div>
-        <div className="mx-auto">
-          <Link to="/yearbook">
-            <div className="border-8 relative size-80 hover:scale-105 transition duration-300">
-              <img src={image5} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-                <h5 className="text-xl mb-3">Yearbook</h5>
-                <h3 className="text-2xl " style={{ fontFamily: '"Sedan", serif' }}>
-                  Bella - Lukas
-                </h3>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="mx-auto">
-          <Link to="/yearbook">
-            <div className="border-8 relative size-80 hover:scale-105 transition duration-300">
-              <img src={image6} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-                <h5 className="text-xl mb-3">Yearbook</h5>
-                <h3 className="text-2xl " style={{ fontFamily: '"Sedan", serif' }}>
-                  Bella - Lukas
-                </h3>
-              </div>
-            </div>
-          </Link>
-        </div>
+            </Link>
+          </div>
+        ))}
       </div>
+      <Footer />
     </div>
   );
 };

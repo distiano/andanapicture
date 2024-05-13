@@ -40,7 +40,7 @@ const WeddingCustomers = () => {
           <IoMdArrowDropdownCircle className="size-10 text-[#433a33]" />
         </button>
       </div>
-      <div ref={galleryRef} className={`photo-gallery ${showGallery ? '' : 'hidden'} px-6 sm:px-10 grid sm:grid-cols-3 gap-6 justify-center py-24`}>
+      <div ref={galleryRef} className={`photo-gallery ${showGallery ? '' : 'hidden'} px-6 sm:px-10 grid md:grid-cols-3 gap-6 justify-center py-24`}>
         {weddingCustomers.imgGallery.map((img, index) => (
           <div key={index}>
             <img src={img} alt={`Image ${index + 1}`} />
