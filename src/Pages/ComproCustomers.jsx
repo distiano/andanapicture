@@ -24,9 +24,9 @@ const ComproCustomers = () => {
         </div>
       </div>
       <div className="py-24 px-6 md:px-16 mb-16 grid justify-center">
-        <div style={{ aspectRatio: '16/9' }}>
+        <div style={{ aspectRatio: '16/9' }} className="flex justify-center">
           <iframe
-            className="rounded-md mt-3 w-[100%] lg:w-[960px]"
+            className="rounded-md mt-3 w-[360px] sm:w-[480px] md:w-[736px] lg:w-[960px]"
             src={comproCustomers.srcYoutube}
             title="YouTube video player"
             frameBorder="0"
