@@ -100,7 +100,9 @@ export default function Example() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+              <h3 className="text-3xl font-normal text-[#433a33]" style={{ fontFamily: '"Great Vibes", cursive' }}>
+                Andana.
+              </h3>{' '}
             </a>
             <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
               <span className="sr-only">Close menu</span>
@@ -110,11 +112,42 @@ export default function Example() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6 ">
-                {navigation.map((item) => (
-                  <a key={item.name} href={item.href} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                    {item.name}
-                  </a>
-                ))}
+                <div className="relative leading-10">
+                  <div>
+                    <Link to="/" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} font-bold`}>
+                      Home
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="/about" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} font-bold `}>
+                      About Us
+                    </Link>
+                  </div>
+                  <div>
+                    <button onClick={toggleDropdown} className="inline-flex justify-center items-center text-[#433a33] font-bold  focus:outline-none">
+                      Portofolio
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M7.293 8.293a1 1 0 011.414 0L10 9.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414zM10 13a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" />
+                      </svg>
+                    </button>
+                    <div className={`dropdown-content absolute mt-2 bg-white text-[#433a33] rounded-sm p-2  w-48 ${isDropdownOpen ? 'block' : 'hidden'}`}>
+                      <Link to="/wedding" className="block py-1 hover:font-bold text-sm ">
+                        Wedding{' '}
+                      </Link>
+                      <Link to="/yearbook" className="block py-1 hover:font-bold text-sm ">
+                        Yearbook{' '}
+                      </Link>
+                      <Link to="/companyprofile" className="block py-1 hover:font-bold text-sm ">
+                        Company Profile Video{' '}
+                      </Link>
+                    </div>
+                  </div>
+                  <div>
+                    <Link to="/portfolio" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} font-bold `}>
+                      Contact
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

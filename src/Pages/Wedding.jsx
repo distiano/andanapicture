@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { useEffect } from 'react';
 import weddingcustomers from '../assets/data/weddingcustomers';
+import Footer from '../Components/Footer/Footer';
 
 const Wedding = () => {
   useEffect(() => {
@@ -40,6 +41,7 @@ const Wedding = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

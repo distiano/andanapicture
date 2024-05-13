@@ -88,7 +88,7 @@ function Gallery() {
           </Link>
         </div>
         <div className="mx-auto">
-          <Link to="/yearbook">
+          <Link to="/companyprofile">
             <div className="border-8 relative size-[350px]">
               <img src={image6} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
