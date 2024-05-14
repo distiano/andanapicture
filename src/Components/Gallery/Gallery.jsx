@@ -11,20 +11,13 @@ import image8 from '../../assets/images/image8.jpg';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-function Gallery() {
-  // const settings = {
-  //   className: 'center',
-  //   centerMode: true,
-  //   infinite: true,
-  //   centerPadding: '60px',
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   speed: 2000,
-  //   autoplaySpeed: 4000,
-  //   cssEase: 'linear',
-  // };
+const images = [
+  { src: image4, title: 'Wedding', link: '/wedding' },
+  { src: image5, title: 'Yearbook', link: '/yearbook' },
+  { src: image6, title: 'Video Company Profile', link: '/companyprofile' },
+];
 
+const Gallery = () => {
   return (
     <div className="py-16 px-6 xl:px-24 bg-[#faf6f2]">
       <div className="flex items-center justify-center ">
@@ -32,7 +25,41 @@ function Gallery() {
         <h1 className="text-4xl font-light text-center text-[#433a33] px-5">Gallery</h1>
         <div className="w-1/5  border-t border-yellow-900 ml-4"></div>
       </div>
-      {/* <div className="mt-10">
+      <div className="mt-10 grid lg:grid-cols-3 gap-3 ">
+        {images.map((image, index) => (
+          <div key={index} className="mx-auto">
+            <Link to={image.link}>
+              <div className="border-8 relative size-[350px]">
+                <img src={image.src} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                  <h3 className="text-3xl font-thin">{image.title}</h3>
+                </div>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Gallery;
+
+// const settings = {
+//   className: 'center',
+//   centerMode: true,
+//   infinite: true,
+//   centerPadding: '60px',
+//   slidesToShow: 3,
+//   slidesToScroll: 1,
+//   autoplay: true,
+//   speed: 2000,
+//   autoplaySpeed: 4000,
+//   cssEase: 'linear',
+// };
+
+{
+  /* <div className="mt-10">
         <Slider {...settings}>
           <div className="border-8 border-white relative group">
             <img src={image1} className="h-56 brightness-75" alt="" />
@@ -65,41 +92,5 @@ function Gallery() {
             </div>
           </div>
         </Slider>
-      </div> */}
-      <div className="mt-10 grid lg:grid-cols-3 gap-3 ">
-        <div className="mx-auto">
-          <Link to="/wedding">
-            <div className="border-8 relative size-[350px]">
-              <img src={image4} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-                <h3 className="text-3xl font-thin">Wedding</h3>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="mx-auto">
-          <Link to="/yearbook">
-            <div className="border-8 relative size-[350px]">
-              <img src={image5} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-                <h3 className="text-3xl font-thin">Yearbook</h3>
-              </div>
-            </div>
-          </Link>
-        </div>
-        <div className="mx-auto">
-          <Link to="/companyprofile">
-            <div className="border-8 relative size-[350px]">
-              <img src={image6} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-                <h3 className="text-3xl font-thin">Video Company Profile</h3>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
+      </div> */
 }
-
-export default Gallery;
