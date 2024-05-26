@@ -31,7 +31,7 @@ const Gallery = () => {
             <Link to={image.link}>
               <div className="border-8 relative size-[350px]">
                 <img src={image.src} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center pointer-events-none">
                   <h3 className="text-3xl font-thin">{image.title}</h3>
                 </div>
               </div>

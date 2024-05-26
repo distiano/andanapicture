@@ -19,7 +19,11 @@ const Contact = () => {
           </div>
           <p className="px-6 md:px-36 font-extralight text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione consectetur accusamus libero iure animi minima voluptatem veritatis harum mollitia temporibus?</p>
           <div className="mt-10 flex justify-center gap-x-6">
-            <a href="#" className="text-center rounded-md flex items-center justify-center gap-4 bg-white py-3  text-sm font-bold text-[#433a33] w-36 sm:w-40" style={{ boxShadow: ' 4px 4px 4px 0px #00000040' }}>
+            <a
+              href="#"
+              className="text-center rounded-md flex items-center justify-center gap-4 bg-white py-3  text-sm font-bold text-[#433a33] hover:bg-[#433a33] hover:text-white w-36 sm:w-40 transition duration-300 ease-in-out"
+              style={{ boxShadow: ' 4px 4px 4px 0px #00000040' }}
+            >
               Contact Us
             </a>
           </div>
@@ -41,7 +45,7 @@ const Contact = () => {
               <img src={image7} alt="" />
             </div>
           </div>{' '}
-          <div className="flex flex-col justify-center items-center text-[#433a33]">
+          <div className="flex flex-col justify-center items-center text-[#433a33] ">
             <FaInstagram className="size-10" />
             <h3 className="text-xl my-5 text-center font-light">Check Out Our Instagram</h3>
             <h3 className="text-xl font-normal">@andanapicture</h3>

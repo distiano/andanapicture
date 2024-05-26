@@ -83,7 +83,7 @@ export default function Example() {
               </Link>
             </div>
           </div>
-          <Link to="/portfolio" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} hover:font-bold `}>
+          <Link to="/contact" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} hover:font-bold `}>
             Contact
           </Link>
         </div>

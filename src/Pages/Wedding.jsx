@@ -31,7 +31,7 @@ const Wedding = () => {
             <Link to={`/weddingcustomers/${weddingcustomers.id}`}>
               <div className="border-8 relative size-80 hover:scale-105 transition duration-300">
                 <img src={weddingcustomers.imgCover} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center pointer-events-none">
                   <h3 className="text-2xl font-thin" style={{ fontFamily: '"Roboto", serif' }}>
                     {weddingcustomers.couple}
                   </h3>
