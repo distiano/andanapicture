@@ -6,17 +6,17 @@ import { IoMdArrowDropdownCircle } from 'react-icons/io';
 import { Image } from 'antd';
 import Footer from '../Components/Footer/Footer';
 
-const WeddingCustomers = () => {
+const YearbookCustomers = () => {
   const { id } = useParams();
 
-  const [weddingImg, setWeddingImg] = useState([]);
-  const [weddingName, setWeddingName] = useState([]);
+  const [yearbookImg, setYearbookImg] = useState([]);
+  const [yearbookName, setYearbookName] = useState([]);
 
   useEffect(() => {
-    fetch('https://andana-picture-api.vercel.app/weddingImg/ambilData')
+    fetch('https://andana-picture-api.vercel.app/yearbookImg/ambilData')
       .then((response) => response.json())
       .then((data) => {
-        setWeddingImg(data);
+        setYearbookImg(data);
       })
       .catch((error) => {
         console.error('Terjadi kesalahan:', error);
@@ -24,10 +24,10 @@ const WeddingCustomers = () => {
   }, []);
 
   useEffect(() => {
-    fetch('https://andana-picture-api.vercel.app/wedding/ambilData')
+    fetch('https://andana-picture-api.vercel.app/yearbook/ambilData')
       .then((response) => response.json())
       .then((data) => {
-        setWeddingName(data);
+        setYearbookName(data);
       })
       .catch((error) => {
         console.error('Terjadi kesalahan:', error);
@@ -50,7 +50,7 @@ const WeddingCustomers = () => {
   return (
     <div className="bg-[#faf6f2]">
       <Example />
-      {weddingName.map(
+      {yearbookName.map(
         (item, index) =>
           item.id === id && (
             <div key={index}>
@@ -68,9 +68,9 @@ const WeddingCustomers = () => {
         </button>
       </div>
       <div ref={galleryRef} className={`photo-gallery ${showGallery ? '' : 'hidden'} px-6 sm:px-10 grid md:grid-cols-3 gap-6 justify-center py-24`}>
-        {weddingImg.map(
+        {yearbookImg.map(
           (img, index) =>
-            img.idWedding === id && (
+            img.idYearbook === id && (
               <div key={index}>
                 <Image src={img.image} height={400} className="size-full object-cover" alt={`Image ${index + 1}`} />
               </div>
@@ -82,4 +82,4 @@ const WeddingCustomers = () => {
   );
 };
 
-export default WeddingCustomers;
+export default YearbookCustomers;

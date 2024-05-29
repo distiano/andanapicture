@@ -4,19 +4,20 @@ import bg1 from '../assets/images/bg1.jpg';
 import { useEffect, useState } from 'react';
 import comprocustomers from '../assets/data/comprocustomers';
 import { useParams } from 'react-router-dom';
+import WeddingCinematic from './WeddingCinematic';
 
-const ComproCustomers = () => {
+const WeddingCinematicCustomers = () => {
   const { id } = useParams();
 
   // const comproCustomers = comprocustomers.find((comprocustomers) => comprocustomers.id.toString() === id);
 
-  const [dataCompro, setDataCompro] = useState([]);
+  const [weddingCinematic, setWeddingCinematic] = useState([]);
 
   useEffect(() => {
-    fetch('https://andana-picture-api.vercel.app/comproVideo/ambilData')
+    fetch('https://andana-picture-api.vercel.app/weddingCinematic/ambilData')
       .then((response) => response.json())
       .then((data) => {
-        setDataCompro(data);
+        setWeddingCinematic(data);
       })
       .catch((error) => {
         console.error('Terjadi kesalahan:', error);
@@ -29,7 +30,7 @@ const ComproCustomers = () => {
   return (
     <div className="bg-[#faf6f2]">
       <Example />
-      {dataCompro.map(
+      {weddingCinematic.map(
         (video, index) =>
           video.id === id && (
             <div key={index}>
@@ -62,4 +63,4 @@ const ComproCustomers = () => {
   );
 };
 
-export default ComproCustomers;
+export default WeddingCinematicCustomers;

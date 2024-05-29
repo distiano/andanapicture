@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { HiMiniBars3 } from 'react-icons/hi2';
 import { IoClose } from 'react-icons/io5';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -14,6 +14,7 @@ const navigation = [
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,14 +45,17 @@ export default function Example() {
   const keepDropdownOpen = () => {
     setIsDropdownOpen(true);
   };
+
+  const isActive = (href) => location.pathname === href;
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 ${isScrolled ? 'bg-white' : ''}`} style={{ transition: 'background-color 0.3s ease' }}>
       <nav className={`transition-all duration-300 ${isScrolled ? 'p-3' : 'p-8 '} sm:px-36 flex items-center justify-between`} aria-label="Global">
         <div className="hidden lg:flex  justify-evenly flex-1">
-          <Link to="/" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} hover:font-bold`}>
+          <Link to="/" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} hover:font-bold ${isActive('/') ? 'font-bold' : ''}`}>
             Home
           </Link>
-          <Link to="/about" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} hover:font-bold `}>
+          <Link to="/about" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} hover:font-bold ${isActive('/about') ? 'font-bold' : ''}`}>
             About Us
           </Link>
         </div>
@@ -72,18 +76,21 @@ export default function Example() {
               </svg>
             </button>
             <div onMouseEnter={keepDropdownOpen} onMouseLeave={closeDropdown} className={`dropdown-content absolute mt-2 bg-white text-[#433a33] rounded-sm p-2 text-center w-48 ${isDropdownOpen ? 'block' : 'hidden'}`}>
-              <Link to="/wedding" className="block py-1 hover:font-bold text-sm ">
+              <Link to="/wedding" className={`block py-1 hover:font-bold text-sm ${isActive('/wedding') ? 'font-bold' : ''}`}>
                 Wedding{' '}
               </Link>
-              <Link to="/yearbook" className="block py-1 hover:font-bold text-sm ">
+              <Link to="/yearbook" className={`block py-1 hover:font-bold text-sm ${isActive('/yearbook') ? 'font-bold' : ''}`}>
                 Yearbook{' '}
               </Link>
-              <Link to="/companyprofile" className="block py-1 hover:font-bold text-sm ">
+              <Link to="/companyprofile" className={`block py-1 hover:font-bold text-sm ${isActive('/companyprofile') ? 'font-bold' : ''}`}>
                 Company Profile Video{' '}
+              </Link>
+              <Link to="/weddingcinematic" className={`block py-1 hover:font-bold text-sm ${isActive('/weddingcinematic') ? 'font-bold' : ''}`}>
+                Wedding Cinematic{' '}
               </Link>
             </div>
           </div>
-          <Link to="/contact" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} hover:font-bold `}>
+          <Link to="/contact" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} hover:font-bold ${isActive('/contact') ? 'font-bold' : ''}`}>
             Contact
           </Link>
         </div>

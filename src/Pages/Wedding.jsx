@@ -7,10 +7,24 @@ import image8 from '../assets/images/image8.jpg';
 import { Link } from 'react-router-dom';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { useEffect } from 'react';
+import { useState } from 'react';
 import weddingcustomers from '../assets/data/weddingcustomers';
 import Footer from '../Components/Footer/Footer';
 
 const Wedding = () => {
+  const [dataWedding, setDataWedding] = useState([]);
+
+  useEffect(() => {
+    fetch('https://andana-picture-api.vercel.app/wedding/ambilData')
+      .then((response) => response.json())
+      .then((data) => {
+        setDataWedding(data);
+      })
+      .catch((error) => {
+        console.error('Terjadi kesalahan:', error);
+      });
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -26,14 +40,14 @@ const Wedding = () => {
         </div>
       </div>
       <div className="py-16 px-6 xl:px-24 grid lg:grid-cols-3 gap-3 justify-center">
-        {weddingcustomers.map((weddingcustomers, index) => (
+        {dataWedding.map((datawedding, index) => (
           <div className="mx-auto" key={index}>
-            <Link to={`/weddingcustomers/${weddingcustomers.id}`}>
+            <Link to={`/wedding/${datawedding.id}`}>
               <div className="border-8 relative size-80 hover:scale-105 transition duration-300">
-                <img src={weddingcustomers.imgCover} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
+                <img src={datawedding.thumbnail} className="size-full object-cover brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center pointer-events-none">
                   <h3 className="text-2xl font-thin" style={{ fontFamily: '"Roboto", serif' }}>
-                    {weddingcustomers.couple}
+                    {datawedding.name}
                   </h3>
                 </div>
               </div>

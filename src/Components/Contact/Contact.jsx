@@ -10,7 +10,7 @@ import { FaInstagram } from 'react-icons/fa';
 const Contact = () => {
   return (
     <div className="py-16 bg-[#faf6f2]">
-      <div className="bg-cover bg-center" style={{ backgroundImage: `url(${bg2})` }}>
+      <div className="bg-cover bg-center" style={{ backgroundImage: `url(${bg2})` }} data-aos="fade-up" data-aos-duration="3000">
         <div className="text-center py-28 bg-black bg-opacity-30">
           <div className="flex items-center justify-center mb-10 text-white">
             <div className="w-1/5 sm:w-1/5 border-t  mr-4"></div>
@@ -31,21 +31,21 @@ const Contact = () => {
       </div>
       <div className="py-16 px-32 ">
         <div className="grid md:grid-cols-2 gap-10">
-          <div className="grid sm:grid-cols-2 border-8 border-white">
-            <div>
+          <div className="grid sm:grid-cols-2 border-8 border-white" data-aos="zoom-in" data-aos-duration="3000">
+            <div data-aos="fade-down-right">
               <img src={image4} alt="" />
             </div>
-            <div>
+            <div data-aos="fade-down-left">
               <img src={image5} alt="" />
             </div>
-            <div>
+            <div data-aos="fade-up-right">
               <img src={image6} alt="" />
             </div>
-            <div>
+            <div data-aos="fade-up-left">
               <img src={image7} alt="" />
             </div>
           </div>{' '}
-          <div className="flex flex-col justify-center items-center text-[#433a33] ">
+          <div className="flex flex-col justify-center items-center text-[#433a33]" data-aos="zoom-in" data-aos-duration="3000">
             <FaInstagram className="size-10" />
             <h3 className="text-xl my-5 text-center font-light">Check Out Our Instagram</h3>
             <h3 className="text-xl font-normal">@andanapicture</h3>

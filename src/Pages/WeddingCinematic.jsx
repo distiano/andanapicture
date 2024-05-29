@@ -7,17 +7,17 @@ import image8 from '../assets/images/image8.jpg';
 import { Link } from 'react-router-dom';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { useEffect, useState } from 'react';
-import weddingcustomers from '../assets/data/weddingcustomers';
+import comprocustomers from '../assets/data/comprocustomers';
 import Footer from '../Components/Footer/Footer';
 
-const Yearbook = () => {
-  const [dataYearbook, setDataYearbook] = useState([]);
+const WeddingCinematic = () => {
+  const [weddingCinematic, setWeddingCinematic] = useState([]);
 
   useEffect(() => {
-    fetch('https://andana-picture-api.vercel.app/yearbook/ambilData')
+    fetch('https://andana-picture-api.vercel.app/weddingCinematic/ambilData')
       .then((response) => response.json())
       .then((data) => {
-        setDataYearbook(data);
+        setWeddingCinematic(data);
       })
       .catch((error) => {
         console.error('Terjadi kesalahan:', error);
@@ -33,20 +33,20 @@ const Yearbook = () => {
       <Example />
       <div className="hero bg-cover " style={{ backgroundImage: `url(${bg1})` }}>
         <div className="min-h-[40vh] flex justify-center items-center pt-14 bg-black bg-opacity-30">
-          <h1 className="text-5xl font-thin text-white" style={{ fontFamily: '"Roboto", serif' }}>
-            Yearbook
+          <h1 className="text-5xl text-center font-thin text-white" style={{ fontFamily: '"Roboto", serif' }}>
+            Wedding Cinematic{' '}
           </h1>
         </div>
       </div>
       <div className="py-16 px-6 xl:px-24 grid lg:grid-cols-3 gap-3 justify-center">
-        {dataYearbook.map((datayearbook, index) => (
+        {weddingCinematic.map((weddingcinematic, index) => (
           <div className="mx-auto" key={index}>
-            <Link to={`/yearbook/${datayearbook.id}`}>
+            <Link to={`/weddingcinematic/${weddingcinematic.id}`}>
               <div className="border-8 relative size-80 hover:scale-105 transition duration-300">
-                <img src={datayearbook.thumbnail} className="size-full object-cover brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
+                <img src={weddingcinematic.thumbnail} className="size-full brightness-75 hover:brightness-50 transition duration-300 ease-in-out" alt="" />
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center pointer-events-none">
                   <h3 className="text-2xl font-thin" style={{ fontFamily: '"Roboto", serif' }}>
-                    {datayearbook.name}
+                    {weddingcinematic.name}
                   </h3>
                 </div>
               </div>
@@ -59,4 +59,4 @@ const Yearbook = () => {
   );
 };
 
-export default Yearbook;
+export default WeddingCinematic;
