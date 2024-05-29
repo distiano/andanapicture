@@ -47,6 +47,10 @@ const WeddingCustomers = () => {
     }
   }, [showGallery]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-[#faf6f2]">
       <Example />
@@ -55,19 +59,20 @@ const WeddingCustomers = () => {
           item.id === id && (
             <div key={index}>
               <div className="hero bg-cover bg-center" style={{ backgroundImage: `url(${item.thumbnail})` }}>
-                <div className="relative isolate px-6 lg:px-16 flex items-center justify-center min-h-[80vh] bg-black bg-opacity-50">
+                <div className="relative isolate px-6 lg:px-16 flex items-center justify-center min-h-[100vh] bg-black bg-opacity-50">
                   <h1 className="text-4xl text-white font-thin">{item.name}</h1>
                 </div>
               </div>
             </div>
           )
       )}
-      <div className="flex items-center justify-center h-[20vh]">
+      {/* <div className="flex items-center justify-center h-[20vh]">
         <button onClick={toggleGallery}>
           <IoMdArrowDropdownCircle className="size-10 text-[#433a33]" />
         </button>
-      </div>
-      <div ref={galleryRef} className={`photo-gallery ${showGallery ? '' : 'hidden'} px-6 sm:px-10 grid md:grid-cols-3 gap-6 justify-center py-24`}>
+      </div> */}
+      <h1 className="text-center text-3xl mt-24 text-[#433a33]">Photo Gallery</h1>
+      <div ref={galleryRef} className={`photo-gallery ${showGallery ? '' : ''} px-6 sm:px-10 grid md:grid-cols-3 gap-6 justify-center pt-10 pb-24`}>
         {weddingImg.map(
           (img, index) =>
             img.idWedding === id && (

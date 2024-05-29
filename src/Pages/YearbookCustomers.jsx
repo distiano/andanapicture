@@ -47,6 +47,10 @@ const YearbookCustomers = () => {
     }
   }, [showGallery]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-[#faf6f2]">
       <Example />
@@ -62,12 +66,14 @@ const YearbookCustomers = () => {
             </div>
           )
       )}
-      <div className="flex items-center justify-center h-[20vh]">
+      {/* <div className="flex items-center justify-center h-[20vh]">
         <button onClick={toggleGallery}>
           <IoMdArrowDropdownCircle className="size-10 text-[#433a33]" />
         </button>
-      </div>
-      <div ref={galleryRef} className={`photo-gallery ${showGallery ? '' : 'hidden'} px-6 sm:px-10 grid md:grid-cols-3 gap-6 justify-center py-24`}>
+      </div> */}
+      <h1 className="text-center text-3xl mt-24 text-[#433a33]">Photo Gallery</h1>
+
+      <div ref={galleryRef} className={`photo-gallery ${showGallery ? '' : ''} px-6 sm:px-10 grid md:grid-cols-3 gap-6 justify-center pt-10 pb-24`}>
         {yearbookImg.map(
           (img, index) =>
             img.idYearbook === id && (

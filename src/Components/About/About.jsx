@@ -17,14 +17,14 @@ const About = () => {
         </h3>
         <div className="grid sm:grid-cols-2 gap-10 mt-10 items-center">
           <div>
-            <p className="font-extralight text-sm md:text-base text-justify" data-aos="fade-right">
+            <p className="font-extralight text-sm md:text-base text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, doloribus deleniti. Accusamus veniam possimus sint. Et, blanditiis harum veritatis earum natus aliquid eius pariatur inventore quisquam aspernatur impedit
               incidunt quod. <br /> <br />
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, doloribus deleniti. Accusamus veniam possimus sint. Et, blanditiis harum veritatis earum natus aliquid eius pariatur inventore quisquam aspernatur impedit
               incidunt quod.
             </p>
           </div>
-          <div className="flex justify-center" data-aos="fade-left">
+          <div className="flex justify-center">
             <img src={image1} className="h-72 border-8 border-white" alt="" />
           </div>
         </div>

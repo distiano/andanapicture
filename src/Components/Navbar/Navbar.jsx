@@ -3,6 +3,7 @@ import { Dialog } from '@headlessui/react';
 import { HiMiniBars3 } from 'react-icons/hi2';
 import { IoClose } from 'react-icons/io5';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../../assets/images/logo/Logo Andana Black2.png';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -60,16 +61,17 @@ export default function Example() {
           </Link>
         </div>
         <div className="">
-          <a href="#">
-            <span className="sr-only">Your Company</span>
+          <Link to="/">
+            <img src={logo} className="h-9" alt="" />
+            {/* <span className="sr-only">Your Company</span>
             <h3 className="text-3xl font-normal text-[#433a33]" style={{ fontFamily: '"Great Vibes", cursive' }}>
               Andana.
-            </h3>{' '}
-          </a>
+            </h3>{' '} */}
+          </Link>
         </div>
         <div className="hidden lg:flex  justify-evenly flex-1">
           <div className="relative">
-            <button onMouseEnter={toggleDropdown} className="inline-flex justify-center items-center text-[#433a33] hover:font-bold  focus:outline-none">
+            <button onMouseEnter={toggleDropdown} className={`inline-flex justify-center items-center text-[#433a33] hover:font-bold ${isActive('/wedding', '/yearbook', '/companyprofile') ? 'font-bold' : ''} focus:outline-none`}>
               Portofolio
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M7.293 8.293a1 1 0 011.414 0L10 9.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414zM10 13a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" />
@@ -105,12 +107,13 @@ export default function Example() {
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+            <Link to="#" className="-m-1.5 p-1.5">
+              <img src={logo} className="h-9" alt="" />
+              {/* <span className="sr-only">Your Company</span>
               <h3 className="text-3xl font-normal text-[#433a33]" style={{ fontFamily: '"Great Vibes", cursive' }}>
                 Andana.
-              </h3>{' '}
-            </a>
+              </h3>{' '} */}
+            </Link>
             <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
               <span className="sr-only">Close menu</span>
               <IoClose className="h-6 w-6" aria-hidden="true" />
@@ -137,7 +140,7 @@ export default function Example() {
                         <path fillRule="evenodd" d="M7.293 8.293a1 1 0 011.414 0L10 9.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414zM10 13a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" />
                       </svg>
                     </button>
-                    <div className={`dropdown-content absolute mt-2 bg-white text-[#433a33] rounded-sm p-2  w-48 ${isDropdownOpen ? 'block' : 'hidden'}`}>
+                    <div className={`dropdown-content absolute  bg-white text-[#433a33] rounded-sm ps-2  w-48 ${isDropdownOpen ? 'block' : 'hidden'}`}>
                       <Link to="/wedding" className="block py-1 hover:font-bold text-sm ">
                         Wedding{' '}
                       </Link>
@@ -147,10 +150,13 @@ export default function Example() {
                       <Link to="/companyprofile" className="block py-1 hover:font-bold text-sm ">
                         Company Profile Video{' '}
                       </Link>
+                      <Link to="/weddingcinematic" className="block py-1 hover:font-bold text-sm ">
+                        Wedding Cinematic{' '}
+                      </Link>
                     </div>
                   </div>
                   <div>
-                    <Link to="/portfolio" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} font-bold `}>
+                    <Link to="/contact" className={` ${isScrolled ? 'text-[#433a33]' : 'text-[#433a33]'} font-bold `}>
                       Contact
                     </Link>
                   </div>
