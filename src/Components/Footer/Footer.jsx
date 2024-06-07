@@ -1,13 +1,16 @@
+import logo from '../../assets/images/logo/Logo Andana Black2.png';
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="pt-10 bg-gradient-to-b from-[#faf6f2] to-[#433a33]">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-1 gap-4 sm:gap-8 text-sm md:text-base py-6 lg:py-8 md:grid-cols-4 px-10 sm:px-16 text-[#433a33]">
           <div>
-            <h1 className="text-5xl font-normal" style={{ fontFamily: '"Great Vibes", cursive' }}>
-              Andana.
-            </h1>
-            <div className="flex mt-4 sm:justify-start md:mt-5 space-x-5 rtl:space-x-reverse">
+            <Link to="/">
+              <img src={logo} className="h-14" alt="" />
+            </Link>
+            {/* <div className="flex mt-4 sm:justify-start md:mt-5 space-x-5 rtl:space-x-reverse">
               <a href="#" className="text-[#433a33] hover:text-gray-900 dark:hover:text-white">
                 <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                   <path fillRule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clipRule="evenodd" />
@@ -45,30 +48,30 @@ const Footer = () => {
                 </svg>
                 <span className="sr-only">Dribbble account</span>
               </a>
-            </div>
+            </div> */}
           </div>
           <div>
             <h2 className="mb-3 sm:mb-6 text-base font-medium">Company</h2>
             <ul className="font-light">
               <li className="mb-4">
-                <a href="#" className=" hover:underline">
+                <Link to="/" className=" hover:underline">
+                  Home
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link href="/about" className="hover:underline">
                   About
-                </a>
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Careers
-                </a>
+                <Link href="#" className="hover:underline">
+                  Portofolio{' '}
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Brand Center
-                </a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Blog
-                </a>
+                <Link href="/contact" className="hover:underline">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
@@ -76,16 +79,16 @@ const Footer = () => {
             <h2 className="mb-3 sm:mb-6 text-base font-medium">Help center</h2>
             <ul className="font-light">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Discord Server
-                </a>
+                <Link to="https:/wa.me/628112631212" className="hover:underline">
+                  Whatsapp{' '}
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Twitter
-                </a>
+                <Link to="https://www.instagram.com/andanapicture/" className="hover:underline">
+                  Instagram
+                </Link>
               </li>
-              <li className="mb-4">
+              {/* <li className="mb-4">
                 <a href="#" className="hover:underline">
                   Facebook
                 </a>
@@ -94,7 +97,7 @@ const Footer = () => {
                 <a href="#" className="hover:underline">
                   Contact Us
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div>

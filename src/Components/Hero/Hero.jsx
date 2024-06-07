@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="rounded-lg ">
           <div className=" text-center text-white">
             <h1 className="text-7xl font-thin  tracking-tight">Cerita Bersamamu </h1>
-            <p className="mt-6 font-thin text-base sm:text-lg leading-8 text-grey-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, ipsum!</p>
+            <p className="mt-6 font-thin text-base sm:text-lg leading-8 text-grey-600">Andana Picture is a photography group that strives to capture your many happy moments</p>
             <div className="mt-10 flex justify-center gap-x-6">
               <a
                 href="#"

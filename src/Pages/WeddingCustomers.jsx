@@ -47,9 +47,9 @@ const WeddingCustomers = () => {
     }
   }, [showGallery]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <div className="bg-[#faf6f2]">
@@ -72,12 +72,12 @@ const WeddingCustomers = () => {
         </button>
       </div> */}
       <h1 className="text-center text-3xl mt-24 text-[#433a33]">Photo Gallery</h1>
-      <div ref={galleryRef} className={`photo-gallery ${showGallery ? '' : ''} px-6 sm:px-10 grid md:grid-cols-3 gap-6 justify-center pt-10 pb-24`}>
+      <div ref={galleryRef} className={`photo-gallery ${showGallery ? '' : ''} px-6 sm:px-10 grid lg:grid-cols-3 gap-6 justify-center mx-auto pt-10 pb-24`}>
         {weddingImg.map(
           (img, index) =>
             img.idWedding === id && (
-              <div key={index}>
-                <Image src={img.image} height={400} className="size-full object-cover" alt={`Image ${index + 1}`} />
+              <div key={index} className="flex justify-center">
+                <Image src={img.image} height={400} width={375} className=" object-cover " alt={`Image ${index + 1}`} />
               </div>
             )
         )}
