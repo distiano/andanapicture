@@ -124,7 +124,7 @@ const Footer = () => {
         <hr className="opacity-25" />
         <div className="px-4 py-6  md:flex md:items-center md:justify-between">
           <span className="text-sm text-white dark:text-gray-300 sm:text-center">
-            © 2024 <a href="https://flowbite.com/">Owudev</a>. All Rights Reserved.
+            © 2024 <a href="https://owudev.com/">Owudev</a>. All Rights Reserved.
           </span>
         </div>
       </div>
